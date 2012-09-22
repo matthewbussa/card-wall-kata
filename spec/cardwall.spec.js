@@ -55,8 +55,8 @@ describe("Cardwall", function() {
       var cardTwo = createCard("Dos", "desc2", 4);
       var cardThree = createCard("Sherief", "desc3", 6);
       wall.addCard(cardOne);
-      wall.addCard(cardTwo);
       wall.addCard(cardThree);
+      wall.addCard(cardTwo);
       expect(wall.cards).toEqual([cardThree, cardTwo, cardOne]);
     });
 
