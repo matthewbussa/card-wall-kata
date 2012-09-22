@@ -57,7 +57,7 @@ describe("Cardwall", function() {
       wall.addCard(cardOne);
       wall.addCard(cardTwo);
       wall.addCard(cardThree);
-      expect(wall.cards).toEqual([cradThree, cardTwo, cardOne]);
+      expect(wall.cards).toEqual([cardThree, cardTwo, cardOne]);
     });
 
 

@@ -15,11 +15,7 @@ var createWall = function() {
   var wall = {
     cards: [],
     addCard: function(card) {
-      if(this.cards.length === 0){ 
-        this.cards.push(card);
-      } else {
-        this.cards.unshift(card);
-      }
+      this.cards.unshift(card);
     }
   };
 
