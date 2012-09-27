@@ -205,6 +205,11 @@ describe("Cardwall", function() {
 	  expect(wall.allCards()).toEqual([]);
       });
 
+      it("can add statuses", function() {
+	  wall.addStatus("TODO");
+	  expect(wall.cards[0].name).toBe("TODO");
+      });
+
   });
 
 });

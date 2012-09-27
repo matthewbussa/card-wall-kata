@@ -17,6 +17,10 @@ margin: 10px;
 			<input name="description" />
 			<button class="add">Add a card</button>
 		</div>
+		<div class="bordered">
+			<input name="name" />
+			<button class="addStatus">Add status</button>
+		</div>
 		<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
 		<script type="text/javascript" src="lib/underscore-min.js"></script>
 		<script type="text/javascript" src="src/cardwall.js"></script>
@@ -24,8 +28,14 @@ margin: 10px;
 		</script>
 		<script type="text/html" id="cardTemplate">
 		<div class="bordered">card has description <%=
-	description %>
+	card.description %>
 		  <button class="remove">Remove</button>
+		  <select name="destination">
+		    <% _(statuses).each(function(status) { %>
+		    <option><%= status %></option>
+		      <% }); %>
+		  </select>
+		  <button class="move">Move</button>
 		</div>
 		</script>
 	</body>

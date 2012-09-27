@@ -81,7 +81,16 @@ var createWall = function() {
 		cards = cards.concat(status.cards);
 	    });
 	    return cards;
+	},
+
+	addStatus: function(name) {
+	    this.cards.push({
+		name: name,
+		cards: []
+	    });
+	    localStorage.cards = JSON.stringify(this.cards);
 	}
+
     };
     return wall;
 
