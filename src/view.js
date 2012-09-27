@@ -1,17 +1,27 @@
 jQuery(function($) {
 
     var wall = createWall();
-/*
-    wall.addCard(createCard("our first card", "our first card", 1));
-    wall.addCard(createCard("our second card", "our second card", 2));
-*/
+    /*
+      wall.addCard(createCard("our first card", "our first card", 1));
+      wall.addCard(createCard("our second card", "our second card", 2));
+    */
 
     var refresh = function() {
 	var outer = $('.outer');
 	outer.empty();
-	_(wall.allCards()).each(function(card) {
-	    var container = $('<div class="bordered"/>');
-	    container.html("card has description " + card.description).appendTo(outer);
+	_(wall.cards).each(function(status) {
+	    var between = $('<div class="bordered"/>').appendTo(outer);
+	    between.text("status: " + (status.name || "I HAVE NO NAME"));
+	    _(status.cards).each(function(card) {
+		var template = _.template($('#cardTemplate').html());
+		var html = template(card);
+		var inner = $(html);
+		$(inner).find('button.remove').click(function() {
+		    wall.removeCard(card);
+		    refresh();
+		});
+		between.append(inner);
+	    });
 	});
 
     };

@@ -22,7 +22,11 @@ margin: 10px;
 		<script type="text/javascript" src="src/cardwall.js"></script>
 		<script type="text/javascript" src="src/view.js">
 		</script>
-		<script type="text/javascript">
+		<script type="text/html" id="cardTemplate">
+		<div class="bordered">card has description <%=
+	description %>
+		  <button class="remove">Remove</button>
+		</div>
 		</script>
 	</body>
 </html>

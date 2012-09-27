@@ -44,6 +44,13 @@ var createWall = function() {
 	    localStorage.cards = JSON.stringify(this.cards);
 	},
 
+	removeCard: function(card) {
+	    _(this.cards).each(function(status) {
+		status.cards = _(status.cards).without(card);
+	    });
+	    localStorage.cards = JSON.stringify(this.cards);
+	},
+
 	completeCard: function(card){
 	    card.done = true;  
 	},
